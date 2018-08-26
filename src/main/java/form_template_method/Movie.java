@@ -10,7 +10,8 @@ public class Movie {
 
     public Movie(String title, int priceCode) {
         this.title = title;
-        this.priceCode = priceCode;
+        //this.priceCode = priceCode;
+        setPriceCode(priceCode);
     }
 
     public int getPriceCode() {
@@ -23,5 +24,13 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+
+    int getFrequentRentalPoints(int dayRented) {
+        if ((getPriceCode() == Movie.NEW_RELEASE) && dayRented > 1) {
+            return 2;
+        } else {
+            return 1;
+        }
     }
 }

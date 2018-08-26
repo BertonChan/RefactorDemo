@@ -40,10 +40,11 @@ public class Rental {
     }
 
     int getFrequentRentalPoints() {
-        if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDayRented() > 1) {
-            return 2;
-        } else {
-            return 1;
-        }
+//        if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDayRented() > 1) {
+//            return 2;
+//        } else {
+//            return 1;
+//        }
+        return movie.getFrequentRentalPoints(dayRented);
     }
 }
