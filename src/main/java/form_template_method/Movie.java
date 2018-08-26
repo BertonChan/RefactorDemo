@@ -42,32 +42,20 @@ public class Movie {
     }
 
     int getFrequentRentalPoints(int dayRented) {
-        if ((getPriceCode() == Movie.NEW_RELEASE) && dayRented > 1) {
-            return 2;
-        } else {
-            return 1;
-        }
+       return price.getFrequentRentalPoints(dayRented);
     }
 
-    public double getCharge(int daysRented) {
-        double result = 0;
-        switch (getPriceCode()) {
-            case Movie.REGULAR:
-                result += 2;
-                if (daysRented > 2) {
-                    result += (daysRented - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                result += daysRented * 3;
-                break;
-            case Movie.CHILDRENS:
-                result += 1.5;
-                if (daysRented > 3) {
-                    result += (daysRented - 3) * 1.5;
-                }
-                break;
-        }
-        return result;
+//    int getFrequentRentalPoints(int dayRented) {
+//        if ((getPriceCode() == Movie.NEW_RELEASE) && dayRented > 1) {
+//            return 2;
+//        } else {
+//            return 1;
+//        }
+//    }
+
+    double getCharge(int daysRented) {
+        return price.getCharge(daysRented);
     }
+
+
 }
